@@ -15,6 +15,8 @@ public class SurveyHandler {
     double att4; //conscientiousness;
     double att5; //neuroticism;
 
+    String[] attributeStrings = {"Extraversion","Openness","Agreeableness","Conscientiousness","Neuroticism"};
+
     String questionArray[][] = {{"I frequently like to go out with large groups of people", "I enjoy talking to and meeting new people"},
                                 {"I speak openly and plainly to strangers about myself","I tell my close family and friends about my life in great detail"},
                                 {"I don't like to argue with people", "I prefer to avoid disputes with friend and family"},
@@ -30,6 +32,10 @@ public class SurveyHandler {
     int att3Scores[] = new int[numQuestions];
     int att4Scores[] = new int[numQuestions];
     int att5Scores[] = new int[numQuestions];
+
+    public String getAttributeString(int attribute){
+        return attributeStrings[attribute];
+    }
 
     public double getAttributeSurveyScore(int attributeNumber){
         compileSurveyScores();
@@ -49,17 +55,20 @@ public class SurveyHandler {
     }
 
     public void submitSurveyScore(int attributeNumber,int questionNumber, int score){
-        switch (attributeNumber){
-            case 1:
-                att1Scores[questionNumber] = score;
-            case 2:
-                att2Scores[questionNumber] = score;
-            case 3:
-                att3Scores[questionNumber] = score;
-            case 4:
-                att4Scores[questionNumber] = score;
-            case 5:
-                att5Scores[questionNumber] = score;
+        if(!(attributeNumber >= questionArray.length || questionNumber >= questionArray[0].length)) {
+
+            switch (attributeNumber) {
+                case 1:
+                    att1Scores[questionNumber] = score;
+                case 2:
+                    att2Scores[questionNumber] = score;
+                case 3:
+                    att3Scores[questionNumber] = score;
+                case 4:
+                    att4Scores[questionNumber] = score;
+                case 5:
+                    att5Scores[questionNumber] = score;
+            }
         }
     }
 
@@ -76,6 +85,8 @@ public class SurveyHandler {
     }
 
     public String getQuestionText(int attributeNumber, int questionNumber) {
+        if(attributeNumber >= questionArray.length || questionNumber >= questionArray[0].length)
+            return "";
         Log.e("RyanOut","Attribute " + attributeNumber + " Question " + questionNumber);
         return questionArray[attributeNumber][questionNumber];
         //return "Stand in"+ attributeNumber + questionNumber;

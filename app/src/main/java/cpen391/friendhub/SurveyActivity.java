@@ -1,6 +1,7 @@
 package cpen391.friendhub;
 
 import android.content.Intent;
+import android.icu.util.ValueIterator;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -138,14 +139,13 @@ public class SurveyActivity extends AppCompatActivity {
         }
 
 
-
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             final View rootView = inflater.inflate(R.layout.fragment_survey, container, false);
             final ProgressBar progress = (ProgressBar) rootView.findViewById(R.id.SurveyProgress);
             progress.setMax(sHandler.numQuestions*5);
-
+            progress.setProgress(getSurveyProgress());
             final RadioGroup surveyGroup = (RadioGroup) rootView.findViewById(R.id.surveyRadioGroup);
             //Initiate Buttons
             final TextView textView = (TextView) rootView.findViewById(R.id.section_label);
@@ -157,6 +157,8 @@ public class SurveyActivity extends AppCompatActivity {
             final Button finishButton = (Button) rootView.findViewById(R.id.FinishButton);
 
             final int attributeNumber = getArguments().getInt(ARG_SECTION_NUMBER)-1;
+            final TextView attributeText = (TextView) rootView.findViewById(R.id.AttributeText);
+            attributeText.setText(sHandler.getAttributeString(attributeNumber));
 
             if (questionTracker[attributeNumber] == numQuestions) nextButton.setVisibility(GONE);
 
