@@ -1,5 +1,7 @@
 package cpen391.friendhub;
 
+import android.util.Log;
+
 /**
  * Created by Ryan on 2017-03-13.
  */
@@ -49,15 +51,15 @@ public class SurveyHandler {
     public void submitSurveyScore(int attributeNumber,int questionNumber, int score){
         switch (attributeNumber){
             case 1:
-                att1Scores[questionNumber-1] = score;
+                att1Scores[questionNumber] = score;
             case 2:
-                att2Scores[questionNumber-1] = score;
+                att2Scores[questionNumber] = score;
             case 3:
-                att3Scores[questionNumber-1] = score;
+                att3Scores[questionNumber] = score;
             case 4:
-                att4Scores[questionNumber-1] = score;
+                att4Scores[questionNumber] = score;
             case 5:
-                att5Scores[questionNumber-1] = score;
+                att5Scores[questionNumber] = score;
         }
     }
 
@@ -74,7 +76,8 @@ public class SurveyHandler {
     }
 
     public String getQuestionText(int attributeNumber, int questionNumber) {
-        return questionArray[attributeNumber-1][questionNumber-1];
+        Log.e("RyanOut","Attribute " + attributeNumber + " Question " + questionNumber);
+        return questionArray[attributeNumber][questionNumber];
         //return "Stand in"+ attributeNumber + questionNumber;
     }
 }

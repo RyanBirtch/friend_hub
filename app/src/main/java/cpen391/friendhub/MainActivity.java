@@ -2,8 +2,8 @@ package cpen391.friendhub;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
 
         Button getUserButton = (Button) findViewById(R.id.getUser);
 
+        Button goToSurveyButton = (Button) findViewById(R.id.SurveyButton);
+        final Intent intent = new Intent(this, IntermediateSurveyActivity.class );
+        goToSurveyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("Ryanout","Onclick  "+IntermediateSurveyActivity.class);
+                startActivity(intent);
+            }
+        });
         getUserButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,10 +63,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void switchToSurvey(View view){
-        Intent intent = new Intent(this,Survey.class);
-        startActivity(intent);
-    }
+
 
     public void renderResponse(User client){
         TextView name = (TextView) findViewById(R.id.name);

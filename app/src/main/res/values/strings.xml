@@ -7,4 +7,5 @@
     <string name="RadioButton2Text">Mildly Agree</string>
     <string name="RadioButton3Text">Mildly Disagree</string>
     <string name="RadioButton4Text">Strongly Disagree</string>
+    <string name="IntermediateSurveyWelcome">You\'re about to take your personality survey, swipe around and answer the questions to start finding some matches!</string>
 </resources>

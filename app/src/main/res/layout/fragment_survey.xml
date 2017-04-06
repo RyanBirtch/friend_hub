@@ -3,105 +3,102 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cpen391.friendhub.Survey$PlaceholderFragment">
+    tools:context="cpen391.friendhub.SurveyActivity$PlaceholderFragment">
 
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:clipToPadding="false"
-        android:fillViewport="false"
-        android:scrollbarStyle="insideOverlay"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp">
 
-        <LinearLayout
+        <ProgressBar
+            android:id="@+id/SurveyProgress"
+            style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:indeterminate="false"
+            android:progress="0" />
 
-            <TextView
-                android:id="@+id/section_label"
+        <TextView
+            android:id="@+id/section_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="Lorem ipsum dorem amet aasj toiaskjfasldkjfLorem ipsum dorem amet aasj toiaskjfasldkjfLorem ipsum dorem amet aasj toiaskjfasldkjfLorem ipsum dorem amet aasj toiaskjfasldkjf"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/surveyRadioGroup"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <RadioGroup
+            android:id="@+id/surveyRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="7dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/nextQButton"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1">
+
+            <RadioButton
+                android:id="@+id/surveyRadioButton1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:text="Lorem ipsum dorem amet aasj toiaskjfasldkjfLorem ipsum dorem amet aasj toiaskjfasldkjfLorem ipsum dorem amet aasj toiaskjfasldkjfLorem ipsum dorem amet aasj toiaskjfasldkjf"
-                android:textAlignment="textStart"
-                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/surveyRadioGroup"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_constraintLeft_creator="1"
-                tools:layout_constraintRight_creator="1"
-                tools:layout_constraintTop_creator="1" />
+                android:layout_height="60dp"
+                android:text="@string/RadioButton1Text" />
 
-            <RadioGroup
-                android:id="@+id/surveyRadioGroup"
+            <RadioButton
+                android:id="@+id/surveyRadioButton2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="7dp"
-                android:layout_marginLeft="22dp"
-                android:layout_marginRight="7dp"
-                android:layout_marginStart="22dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/nextQButton"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_constraintLeft_creator="1"
-                tools:layout_constraintRight_creator="1"
-                tools:layout_constraintTop_creator="1">
+                android:layout_height="60dp"
+                android:checked="false"
+                android:text="@string/RadioButton2Text" />
 
-                <RadioButton
-                    android:id="@+id/surveyRadioButton1"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:text="@string/RadioButton1Text" />
-
-                <RadioButton
-                    android:id="@+id/surveyRadioButton2"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:checked="false"
-                    android:text="@string/RadioButton2Text" />
-
-                <RadioButton
-                    android:id="@+id/surveyRadioButton3"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:text="@string/RadioButton3Text" />
-
-                <RadioButton
-                    android:id="@+id/surveyRadioButton4"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:text="@string/RadioButton4Text" />
-
-            </RadioGroup>
-
-            <Button
-                android:id="@+id/nextQButton"
+            <RadioButton
+                android:id="@+id/surveyRadioButton3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Next Question"
-                android:visibility="visible" />
+                android:layout_height="60dp"
+                android:text="@string/RadioButton3Text" />
 
-            <Button
-                android:id="@+id/FinishButton"
+            <RadioButton
+                android:id="@+id/surveyRadioButton4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Finish Survey"
-                android:visibility="invisible" />
+                android:layout_height="60dp"
+                android:text="@string/RadioButton4Text" />
 
-        </LinearLayout>
-    </ScrollView>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/nextQButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next Question"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/FinishButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Finish Survey"
+            android:visibility="invisible" />
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
 
