@@ -27,7 +27,7 @@ import android.widget.TextView;
 
 import static android.view.View.*;
 
-public class Survey extends AppCompatActivity {
+public class SurveyActivity extends AppCompatActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -53,7 +53,6 @@ public class Survey extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey);
-
         sHandler = new SurveyHandler();
         userAttributes = new double[5];
 
